@@ -7,7 +7,7 @@ Created 'Blue' and 'Green' deployments using the following yml file: bluegreen_d
 
 Created NodePort service pointing to deployment: bluegreen_service.yml
 
-Change 'selector: app:' section in bluegreen_service.yml to point it to either 'app: green' or 'app: blue' label.
+Flip 'selector: app:' section in bluegreen_service.yml to point it to either 'app: green' or 'app: blue' label.
 
 example:
 1. selector: app: green

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: green
-        image: ankurpatel/bluegreen_deploy:1.0
+        image: ankurpatel/bluegreen_deploy:v1.0
         ports:
         - containerPort: 80
 ---
@@ -36,6 +36,6 @@ spec:
     spec:
       containers:
       - name: blue
-        image: ankurpatel/bluegreen_deploy:2.0
+        image: ankurpatel/bluegreen_deploy:v2.0
         ports:
         - containerPort: 80

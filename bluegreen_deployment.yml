@@ -1,27 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: green
-  template:
-    metadata:
-      labels:
-        app: green
-    spec:
-      containers:
-      - name: green
-        image: ankurpatel/bluegreen_deploy:v1.0
-        ports:
-        - containerPort: 80
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: blue
   namespace: default
 spec:
@@ -36,6 +15,27 @@ spec:
     spec:
       containers:
       - name: blue
+        image: ankurpatel/bluegreen_deploy:v1.0
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: green
+  template:
+    metadata:
+      labels:
+        app: green
+    spec:
+      containers:
+      - name: green
         image: ankurpatel/bluegreen_deploy:v2.0
         ports:
         - containerPort: 80
